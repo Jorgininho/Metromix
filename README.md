@@ -13,3 +13,9 @@ Pour la 2ème partie, création du visuel :
   - Cet ordinateur doit avoir les dernière version de nodeJS et NPM installée.
   - Pour lancer l' serveur en local :
   "npm start"
+
+
+Le trajet au format JSON :
+![le trajet JSON](./JSON.jpeg)
+Le trajet traité par l'application REACT :
+![React](./react.png)
