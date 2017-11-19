@@ -17,9 +17,9 @@ Pour la 2ème partie, création du visuel :
 
 Le trajet au format JSON :
 
-![le trajet JSON](./JSON.jpeg)
+ ![le trajet JSON](./JSON.jpeg)
 
 
 Le trajet traité par l'application REACT :
 
-![React](./react.png)
+ ![React](./react.png)
