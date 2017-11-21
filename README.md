@@ -23,3 +23,22 @@ Le trajet au format JSON :
 Le trajet traité par l'application REACT :
 
  ![React](./react.png)
+
+
+ Creation du visuel : Configuration du serveur
+
+L'application ReactJS qui génère le visuel doit avoir un serveur qui tourne en back-end (non visible par l'utilisateur).
+Sur le PC qui devra generer ce visuel doit donc avoir un serveur qui tourne en permanence. Ce serveur utilise la technologie NodeJS.
+
+La 1ere étape est donc d'installer la dernière version de NodeJS :
+https://nodejs.org/en/download/
+
+Telecharger ensuite ce dépot git sur le PC.
+
+Pour lancer le serveur 
+- dans un terminal, aller dans la copie de ce dépot sur le PC
+- lancer les commandes
+>npm install
+>npm start
+
+Dans votre navigateur, à l'adresse "http://localhost:3000/" vous devrier voir l'application et donc le visuel du ticket à imprimer.
