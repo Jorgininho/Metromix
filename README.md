@@ -35,10 +35,20 @@ https://nodejs.org/en/download/
 
 Telecharger ensuite ce dépot git sur le PC.
 
-Pour lancer le serveur 
+Pour lancer le serveur
 - dans un terminal, aller dans la copie de ce dépot sur le PC
 - lancer les commandes
 >npm install
 >npm start
 
 Dans votre navigateur, à l'adresse "http://localhost:3000/" vous devrier voir l'application et donc le visuel du ticket à imprimer.
+
+#Acancement code
+Nous alons récuperer les images des lignes de bus et metro sur
+https://data.explore.star.fr/explore/?sort=title
+on récupere un fichier CSV, où l'on modifie le titre de la colonne "Ligne (nom court)", on modifie ensuite ce fichier en fichier json ("ligne_bus.json" dans "src") (parce que je sais pas importer un CSV en react et je sais pas appeler un champ avec un espace dedans)
+
+Il reste :
+- comprendre pourquoi ça reviens à la ligne entre les images ?
+- empecher l'affichage d'un cadre vide quand l'étape n'est pas un bus ou metro
+- comprendre comment exporter en PDF

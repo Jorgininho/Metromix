@@ -1,6 +1,7 @@
 body {
   font: 20px "Century Gothic", Futura, sans-serif;
   margin: 20px;
+  white-space:nowrap;
 }
 
 ol, ul {
@@ -47,4 +48,19 @@ ol, ul {
 
 .game-info {
   margin-left: 20px;
+}
+
+.ticket{
+  width: 400px;
+  white-space:nowrap;
+}
+
+.icon_ligne{
+  width:50px;
+  height: 50px;
+  white-space: nowrap;
+}
+
+.etape{
+  white-space:nowrap;
 }
