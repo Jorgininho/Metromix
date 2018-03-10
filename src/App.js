@@ -91,8 +91,17 @@ class Etape extends React.Component {
   ))
   }
 
+  importAll(r) {
+  let images_lignes_bus = {};
+  r.keys().map((item, index) => { images_lignes_bus[item.replace('./', '')] = r(item); });
+  return images_lignes_bus;
+  }
+
+
+
   render () {
 
+    const images_lignes_bus = this.importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
     if (this.props.etap.mode){
       if (this.props.etap.mode==="walking" || this.props.etap.transfer_type==="walking"){
         this.state.image_type=marche_image;
@@ -102,21 +111,21 @@ class Etape extends React.Component {
     if (this.props.etap.display_informations){
       if (this.props.etap.display_informations.physical_mode==="Tramway"){
         this.state.image_type="./tramway.bmp",
-        this.state.image_ligne=this.state.ligne.concat(this.props.etap.display_informations.label+".bmp"),
+        this.state.image_ligne=this.props.etap.display_informations.label+".png",
         this.state.ligne = this.props.etap.display_informations.label
         this.state.destination="à l'arret " + this.props.etap.from.name +" prendre ligne : "+ this.state.ligne + " direction :" + this.props.etap.display_informations.direction + "descendre à l'arrêt " + this.props.etap.to.stop_point.name
       }
 
       if (this.props.etap.display_informations.physical_mode==="Bus") {
         this.state.image_type=bus_image,
-        this.state.image_ligne=this.state.ligne_img.concat(this.props.etap.display_informations.label+".bmp"),
+        this.state.image_ligne=this.props.etap.display_informations.label+".png",
         this.state.ligne = this.props.etap.display_informations.label
         //console.log(this.state.ligne);
         this.state.destination="à l'arret " + this.props.etap.from.name +" prendre ligne : "+ this.state.ligne + " direction :" + this.props.etap.display_informations.direction + "descendre à l'arrêt " + this.props.etap.to.stop_point.name
       };
       if (this.props.etap.display_informations.physical_mode==="Métro") {
         this.state.image_type=metro_image,
-        this.state.image_ligne=this.state.ligne_img.concat(this.props.etap.display_informations.label+".bmp"),
+        this.state.image_ligne=this.props.etap.display_informations.label+".png",
         this.state.ligne = this.props.etap.display_informations.label,
         this.state.destination="à l'arret " + this.props.etap.from.name +" prendre ligne : "+ this.state.ligne + " direction :" + this.props.etap.display_informations.direction + "descendre à l'arrêt " + this.props.etap.to.stop_point.name
       };
@@ -128,13 +137,15 @@ class Etape extends React.Component {
 
       }
     }
+    console.log('ligne'+this.state.image_ligne);
+    console.log('ouai'+images_lignes_bus['this.state.image_ligne']);
 
     return (
       <div className="etape">
         <p>
           <img src={this.state.image_type} className="icon_ligne"/>
           {this.affichLigne(lignes_bus)}
-          <img className="icon_ligne" src={this.state.image} />
+          <img className="icon_ligne" src={images_lignes_bus[this.state.image_ligne]} />
 
           {/*<Image_Ligne ligne={this.state.ligne} json_file={lignes_bus}/>*/}
 
@@ -155,7 +166,7 @@ class App extends Component {
     html2canvas(document.getElementById('ticket')).then((canvas) => {
       const canvas2 = canvas;
       //this.setState({ displayCanvas: true });
-      //document.getElementById('ticket').appendChild(canvas);
+      document.getElementById('ticket').appendChild(canvas);
 
       const dataUrl = canvas.toDataURL();
       console.log(dataUrl);
