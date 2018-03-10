@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import html2canvas from 'html2canvas';
 
-import logo from './logo.svg';
 import './App.css';
-import imgtest from './test.jpg'
 
 import bus_image from './img/Bus-100x100.png';
 import metro_image from './img/Metro-100x100.png';
@@ -18,8 +16,6 @@ const lignes_bus = require('./ligne_bus.json');
 class Journey_Mgr extends React.Component {
   render() {
     let depart = journey.journeys[0].sections[0];
-    console.log('depart'+depart);
-    console.log(journey.journeys[0].sections[0]);
     return (
       <div id="ticket" className="ticket">
         <h1>Facitrajet</h1>
@@ -32,12 +28,13 @@ class Journey_Mgr extends React.Component {
               ))}
             </div>
 
+
       </div>
   )
     //
   }
 }
-
+/*
 class Image_Ligne extends React.Component {
   constructor(props){
     super(props);
@@ -60,12 +57,13 @@ class Image_Ligne extends React.Component {
     ))
 
     return (
-  <div>
+  <div class="whitespace: nowrap">
     <img className="icon_ligne" src={this.state.image} />
   </div>
 )
 }
 }
+*/
 
 
 class Etape extends React.Component {
@@ -76,8 +74,21 @@ class Etape extends React.Component {
       image_ligne : null,
       ligne_img : "./ligne_",
       destination : null,
-      ligne : null
-    }
+      ligne : null,
+      image : null
+    };
+    this.triImage=this.triImage.bind(this);
+  }
+
+  triImage (ligne){
+    if (ligne.Ligne_nom_court===this.state.ligne){
+      this.state.image=ligne.Image;
+      }
+  }
+  affichLigne(lignes_bus){
+  lignes_bus.map((item,index)=>(
+    this.triImage(item)
+  ))
   }
 
   render () {
@@ -107,7 +118,6 @@ class Etape extends React.Component {
         this.state.image_type=metro_image,
         this.state.image_ligne=this.state.ligne_img.concat(this.props.etap.display_informations.label+".bmp"),
         this.state.ligne = this.props.etap.display_informations.label,
-        console.log(this.state.ligne);
         this.state.destination="à l'arret " + this.props.etap.from.name +" prendre ligne : "+ this.state.ligne + " direction :" + this.props.etap.display_informations.direction + "descendre à l'arrêt " + this.props.etap.to.stop_point.name
       };
     }
@@ -123,8 +133,13 @@ class Etape extends React.Component {
       <div className="etape">
         <p>
           <img src={this.state.image_type} className="icon_ligne"/>
-          <Image_Ligne ligne={this.state.ligne} json_file={lignes_bus}/>
+          {this.affichLigne(lignes_bus)}
+          <img className="icon_ligne" src={this.state.image} />
+
+          {/*<Image_Ligne ligne={this.state.ligne} json_file={lignes_bus}/>*/}
+
           {this.state.destination}
+
         </p>
       </div>
     )
@@ -139,8 +154,8 @@ class App extends Component {
   onClick = () => {
     html2canvas(document.getElementById('ticket')).then((canvas) => {
       const canvas2 = canvas;
-      this.setState({ displayCanvas: true });
-      document.getElementById('ticket').appendChild(canvas);
+      //this.setState({ displayCanvas: true });
+      //document.getElementById('ticket').appendChild(canvas);
 
       const dataUrl = canvas.toDataURL();
       console.log(dataUrl);
@@ -174,7 +189,7 @@ class App extends Component {
 
           {/* <canvas style={{ position: 'absolute', width: 500, height: 500 }} /> */}
         <button onClick={this.onClick}>capture</button>
-      {
+      {/*
         this.state.displayCanvas && (
           <div
             style={{
@@ -188,7 +203,7 @@ class App extends Component {
             id='test'
         />
         )
-      }
+      */}
 
       </div>
     );
