@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "base64-img": "^1.0.4",
+    "downloadjs": "^1.4.7",
     "html2canvas": "^1.0.0-alpha.10",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react-scripts": "1.1.1",
+    "write": "^1.0.3"
   },
   "scripts": {
     "start": "react-scripts start",

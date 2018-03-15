@@ -118,7 +118,9 @@ class Etape extends React.Component {
 
       if (this.props.etap.display_informations.physical_mode==="Bus") {
         this.state.image_type=bus_image,
-        this.state.image_ligne=this.props.etap.display_informations.label+".png",
+        this.state.image_ligne=
+
+        this.props.etap.display_informations.label+".png",
         this.state.ligne = this.props.etap.display_informations.label
         //console.log(this.state.ligne);
         this.state.destination="à l'arret " + this.props.etap.from.name +" prendre ligne : "+ this.state.ligne + " direction :" + this.props.etap.display_informations.direction + "descendre à l'arrêt " + this.props.etap.to.stop_point.name
@@ -167,8 +169,21 @@ class App extends Component {
       const canvas2 = canvas;
       //this.setState({ displayCanvas: true });
       document.getElementById('ticket').appendChild(canvas);
-
       const dataUrl = canvas.toDataURL();
+      var base64Img = require('base64-img');
+      base64Img.img(dataUrl, '', '1', function(err, filepath) {});
+      //require("downloadjs")(dataUrl, 'toto.png');
+
+      //download(dataUrl,'toto.png')
+      /*var image = new Image();
+
+      var writeFile = require('write');
+      writeFile.sync('toto.png',dataUrl);*/
+
+      //image.src = dataUrl;
+      //document.body.appendChild(image);
+
+      localStorage.setItem('tot.png',dataUrl);
       console.log(dataUrl);
       // let windowContent = '<!DOCTYPE html>';
       // windowContent += '<html>';
