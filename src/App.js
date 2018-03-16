@@ -8,8 +8,14 @@ import metro_image from './img/Metro-100x100.png';
 import attente_image from './img/sablier.png';
 import marche_image from './img/walk.png';
 
+import axios from 'axios';
+
 var journey = require('./trajetScript.json'); // forward slashes will depend on the file location
 const lignes_bus = require('./ligne_bus.json');
+
+
+
+
 
 
 //Class to handle the journey
@@ -170,8 +176,8 @@ class App extends Component {
       //this.setState({ displayCanvas: true });
       document.getElementById('ticket').appendChild(canvas);
       const dataUrl = canvas.toDataURL();
-      var base64Img = require('base64-img');
-      base64Img.img(dataUrl, '', '1', function(err, filepath) {});
+      //var base64Img = require('base64-img');
+      //base64Img.img(dataUrl, '', '1', function(err, filepath) {});
       //require("downloadjs")(dataUrl, 'toto.png');
 
       //download(dataUrl,'toto.png')
@@ -183,8 +189,33 @@ class App extends Component {
       //image.src = dataUrl;
       //document.body.appendChild(image);
 
-      localStorage.setItem('tot.png',dataUrl);
-      console.log(dataUrl);
+      //localStorage.setItem('tot.png',dataUrl);
+      //console.log(dataUrl);
+
+      axios.post('localhost:1880/hello', { data :{
+          firstName: 'Fred',
+          lastName: 'Flintstone'
+        }
+      })
+        .then(function (response) {
+          console.log(response);
+          console.log('ouaich');
+        })
+        .catch(function (error) {
+          console.log(error);
+          console.log('ouille');
+        });
+
+/*
+      axios({
+      method: 'post',
+      url: 'https://18f0bd3c-1e03-4ad4-a1af-28336ef46872.mock.pstmn.io',
+      data: {
+      firstName: 'Fred',
+      lastName: 'Flintstone'
+      }
+      });
+*/
       // let windowContent = '<!DOCTYPE html>';
       // windowContent += '<html>';
       // windowContent += '<head><title>Print canvas</title></head>';
@@ -214,7 +245,8 @@ class App extends Component {
           <Journey_Mgr />
 
           {/* <canvas style={{ position: 'absolute', width: 500, height: 500 }} /> */}
-        <button onClick={this.onClick}>capture</button>
+        {/*<!-- <button onClick={this.onClick}>capture</button> --> */}
+      
       {/*
         this.state.displayCanvas && (
           <div

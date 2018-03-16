@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "base64-img": "^1.0.4",
     "downloadjs": "^1.4.7",
+    "fs-": "^1.0.0",
     "html2canvas": "^1.0.0-alpha.10",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
