@@ -1,0 +1,1 @@
+[{"id":"a57225e.f597c58","type":"exec","z":"9aad894c.7d3ab","command":"pico2wave -w /var/local/pico2wave.wav -l fr-FR \"","addpay":true,"append":"\" | aplay","useSpawn":"false","timer":"","oldrc":false,"name":"pico2wave","x":674,"y":147,"wires":[[],[],[]]}]

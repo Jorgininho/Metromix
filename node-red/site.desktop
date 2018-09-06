@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Link
+Name=NodeRed website
+Comment=Page Dacceuil FaciTrajet
+Exec=/usr/bin/chromium-browser
+Type=Application
+Icon=/usr/share/pixmaps/netsurf.png
+URL=http://localhost:1880/accueil
+
