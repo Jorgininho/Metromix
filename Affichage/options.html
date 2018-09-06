@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>options</title>
+<link rel="stylesheet" href="style.css">
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'>
+</script>
+</head>
+
+<body>
+    <body bgcolor="#092868" background="images/fond.png">
+</Body>
+<div>
+	<p class="textoption">Un itinéraire particulier ?</p>
+</div>
+
+<form action=options method="POST">
+<div>
+	<p> <input type=radio name=profil value=bagages id="b">
+		<label for="b"><img class="boutonbagage" src="images/icone_valise.png" alt="bagage encombrant"> </label> </p>
+</div>
+<div>
+	<p> <input type=radio name=profil value=poussette id="p">
+		<label for="p"><img class="boutonpoussette" src="images/icone_poussette.png" alt="Poussette"></label> </p>
+</div>
+<div>
+	<p> <input type=radio name=profil value=poussette id="f">
+	<label for="f"><img class="boutonhandicap" src="images/icone_handicap.png" alt="Handicap"></label>	</p>
+</form>
+	    <div>
+        	<a href="ecoute.html"><img class="flecheoption" src="images/Fleche_verte.png" alt="énoncez votre destination"/></a>
+    </div>
+</div>
+<!-- Ce script soumet le formulaire dès qu'un des choix est sélectionné -->
+<script type='text/javascript'>
+
+ $(document).ready(function() { 
+   $('input[name=profil]').change(function(){
+        $('form').submit();
+   });
+  });
+
+</script>
+</body>
+</html>
