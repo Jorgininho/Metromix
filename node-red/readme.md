@@ -1,5 +1,5 @@
 # Node-Red Flows
-This folder holds successive versions of the Node-RED flows used by the Facitrajet guiding device, with more options included each time. This project is presented [here](facitrajet.strikingly.com) and documented [there](http://www.wiki-rennes.fr/MétroMix_2017/FaciTRAJET).
+This folder holds successive versions of the Node-RED flows used by the Facitrajet guiding device, with more options included each time. This project is presented [here](http://facitrajet.strikingly.com) and documented [there](http://www.wiki-rennes.fr/MétroMix_2017/FaciTRAJET).
 
 ## Setup
 Node-RED is executed on a Raspberry Pi 3, using systemd. The flows editor is served on the 1880 port, while a user webinterface is defined on the /ui path.
