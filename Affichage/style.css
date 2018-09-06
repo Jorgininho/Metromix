@@ -1,0 +1,153 @@
+p{
+	font-family: Montserrat;
+	color:#FFFFFF;
+	font-size:36pt;
+}
+.logo
+{
+	position:absolute;
+	top:20px;
+	left: 240px;
+	width:313px;
+}
+.logo05
+{
+	position:absolute;
+	top:20px;
+	left: 321px;
+}
+.ticket
+{
+	position:absolute;
+	bottom:0px;
+	left: 0px;
+	width:190px;
+}
+.prestext
+{
+	position:absolute;
+	top:110px;
+	left: 240px;
+	width: 510px
+
+}
+.carte
+{
+	position:absolute;
+	bottom:30px;
+	right:130px;
+}
+.fleche
+{
+	position:absolute;
+	bottom:95px;
+	right:40px;
+}
+.micro
+{
+	position:absolute;
+	top:84px;
+	left: 348px;
+}
+.destination1
+{
+	position:absolute;
+	top:80px;
+	left: 100px;
+	width: 600px;
+	max-height: 200px;
+}
+.destination2
+{
+	position:absolute;
+	top:20px;
+	left: 100px;
+	width: 600px;
+	max-height: 200px;
+}
+.destination3
+{
+	position:absolute;
+	top:100px;
+	left: 100px;
+	width: 600px;
+	max-height: 200px;
+}
+.destination4
+{
+	position:absolute;
+	top:180px;
+	left: 100px;
+	width: 600px;
+	max-height: 200px;
+}
+.boutonno
+{
+	position:absolute;
+	bottom: 24px;
+	left:24px;
+
+}
+.boutonyes
+{
+	position:absolute;
+	right:24px;
+	bottom:24px;
+}
+.textoption
+{
+	position: absolute;
+	left:24px;
+	top:2px;
+}
+.boutonbagage
+{
+	position:absolute;
+	left:24px;
+	top:136px;
+}
+.boutonpoussette
+{
+	position:absolute;
+	right:297px;
+	top:136px;
+}
+.boutonhandicap
+{
+	position:absolute;
+	right:24px;
+	top:136px;
+}
+.partenaires
+{
+	position:absolute;
+	top:220px;
+	left: 100px;
+	width: 600px;
+	max-height: 200px;
+}
+.logospartenaires
+{
+	position:absolute;
+	bottom:0px;
+}
+.flecheoption
+{
+	position:absolute;
+	bottom:60px;
+	right:60px;
+}
+.calcul
+{
+	position:absolute;
+	bottom:40px;
+	left:340px;
+}
+.calcultext
+{
+	position:absolute;
+	top:120px;
+	left: 200px;
+	width: 600px;
+	max-height: 200px;
+}

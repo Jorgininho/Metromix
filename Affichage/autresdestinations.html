@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>autres destinations</title>
+<link rel="stylesheet" href="style.css">
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'>
+</script>
+</head>
+
+<body>
+    <body bgcolor="#092868" background="images/fond.png">
+</Body>
+
+    <div>
+    <form action=destination method="POST">
+    <p> <input type=radio name=choix value="0" id="0"> <label for="0">{{global.DestiAlterNom[0]}}</label></p>
+    
+    <p> <input type=radio name=choix value="1" id="1"> <label for="1">{{global.DestiAlterNom[1]}} </label></p>
+   
+	<p> <input type=radio name=choix value="2" id="2"> <label for="2">{{global.DestiAlterNom[2]}}</label></p>
+    <!--<p> <input type=submit value=OK> </p>-->
+	</form>
+    </div>
+    <div>
+    	<p>
+    	<a href="ecoute"><img class="boutonno" src="images/Bouton_NON.png" alt="NON"/></a>
+    </p>
+    </div>
+
+<!-- Ce script soumet le formulaire dès qu'un des choix est sélectionné -->
+<script type='text/javascript'>
+
+ $(document).ready(function() { 
+   $('input[name=choix]').change(function(){
+        $('form').submit();
+   });
+  });
+
+</script>
+</body>
+</html>
